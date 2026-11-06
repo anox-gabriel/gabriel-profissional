@@ -38,7 +38,7 @@ export default function Hero() {
       <div className="pointer-events-none absolute -right-40 top-1/4 h-[620px] w-[620px] rounded-full bg-teal/10 blur-[140px]" />
       <div className="pointer-events-none absolute -left-40 bottom-0 h-[420px] w-[420px] rounded-full bg-ruby/10 blur-[140px]" />
 
-      <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-14 px-5 md:px-8 lg:grid-cols-[1.15fr_1fr]">
+      <div className="relative z-10 mx-auto grid w-full max-w-7xl items-center gap-14 px-5 md:px-8 xl:grid-cols-[1.15fr_1fr]">
         <div>
           <motion.p
             initial={{ opacity: 0, y: 12 }}

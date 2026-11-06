@@ -73,7 +73,7 @@ export default function Nav() {
           </span>
         </a>
 
-        <div className="hidden items-center gap-8 lg:flex">
+        <div className="hidden items-center gap-8 xl:flex">
           {links.map((l) => (
             <a
               key={l.href}
@@ -91,13 +91,13 @@ export default function Nav() {
             href={waLink(lang)}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden rounded-full bg-teal px-5 py-2.5 text-[12px] font-semibold uppercase tracking-[0.18em] text-ink transition hover:bg-cream sm:inline-block"
+            className="hidden whitespace-nowrap rounded-full bg-teal px-5 py-2.5 text-[12px] font-semibold uppercase tracking-[0.18em] text-ink transition hover:bg-cream sm:inline-block"
           >
             {d.nav.talk[lang]}
           </a>
           <button
             onClick={() => setOpen((o) => !o)}
-            className="grid h-10 w-10 place-items-center rounded-full border border-cream/15 lg:hidden"
+            className="grid h-10 w-10 place-items-center rounded-full border border-cream/15 xl:hidden"
             aria-label="Menu"
             aria-expanded={open}
           >
@@ -115,7 +115,7 @@ export default function Nav() {
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
-            className="border-t border-cream/10 bg-ink/95 backdrop-blur-xl lg:hidden"
+            className="border-t border-cream/10 bg-ink/95 backdrop-blur-xl xl:hidden"
           >
             <div className="flex flex-col px-5 py-6">
               {links.map((l) => (
