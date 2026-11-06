@@ -1,0 +1,140 @@
+@import "tailwindcss";
+
+@theme {
+  --color-ink: #0a0a0a;
+  --color-ink-2: #11100f;
+  --color-ink-3: #1a1817;
+  --color-cream: #e5dac8;
+  --color-teal: #26a69a;
+  --color-ruby: #b71c1c;
+  --font-display: var(--font-cinzel), "Times New Roman", serif;
+  --font-sans: var(--font-montserrat), system-ui, sans-serif;
+  --animate-marquee: marquee 38s linear infinite;
+  --animate-twinkle: twinkle 3.2s ease-in-out infinite;
+
+  @keyframes marquee {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.15; transform: scale(0.7) rotate(0deg); }
+    50% { opacity: 1; transform: scale(1) rotate(45deg); }
+  }
+}
+
+:root {
+  --mx: -999px;
+  --my: -999px;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: var(--color-ink);
+  scrollbar-color: #26a69a55 #0a0a0a;
+}
+
+body {
+  background: var(--color-ink);
+  color: var(--color-cream);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+::selection {
+  background: var(--color-teal);
+  color: var(--color-ink);
+}
+
+/* Grid oculto: quase invisível, revelado ao redor do cursor */
+.hidden-grid,
+.hidden-grid-reveal {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  background-image:
+    linear-gradient(to right, var(--g) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--g) 1px, transparent 1px);
+  background-size: 72px 72px;
+}
+.hidden-grid {
+  --g: rgba(229, 218, 200, 0.028);
+}
+.hidden-grid-reveal {
+  --g: rgba(38, 166, 154, 0.32);
+  -webkit-mask-image: radial-gradient(260px circle at var(--mx) var(--my), #000 0%, transparent 70%);
+  mask-image: radial-gradient(260px circle at var(--mx) var(--my), #000 0%, transparent 70%);
+}
+
+/* granulado sutil */
+.grain::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* cartas do hero */
+.hero-card {
+  --cw: 150px;
+  width: var(--cw);
+  margin-left: calc(var(--cw) / -2);
+  margin-top: calc(var(--cw) * -0.733);
+}
+@media (min-width: 640px) {
+  .hero-card { --cw: 190px; }
+}
+
+/* carta que vira */
+.flip {
+  perspective: 1200px;
+}
+.flip-inner {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.flip:hover .flip-inner,
+.flip[data-flipped="true"] .flip-inner {
+  transform: rotateY(180deg);
+}
+.flip-face {
+  position: absolute;
+  inset: 0;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+.flip-back {
+  transform: rotateY(180deg);
+}
+
+/* print do site rolando dentro da janela */
+.scroll-shot {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: auto;
+  transform: translateY(0);
+  transition: top 5.5s cubic-bezier(0.45, 0, 0.55, 1), transform 5.5s cubic-bezier(0.45, 0, 0.55, 1);
+}
+.group:hover .scroll-shot {
+  top: 100%;
+  transform: translateY(-100%);
+}
+
+.text-gradient {
+  background: linear-gradient(100deg, #e5dac8 30%, #26a69a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .scroll-shot, .flip-inner { transition: none; }
+  .animate-marquee, .animate-twinkle { animation: none; }
+}
