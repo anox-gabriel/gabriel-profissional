@@ -6,6 +6,7 @@ const cinzel = Cinzel({ variable: "--font-cinzel", subsets: ["latin"], weight: [
 const montserrat = Montserrat({ variable: "--font-montserrat", subsets: ["latin"], weight: ["300", "400", "500", "600"] });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://gabrielsoares-design.vercel.app"),
   title: "Gabriel Soares · Designer & Web Designer",
   description:
     "Portfólio de Gabriel Soares: sites, landing pages, social media e criativos com domínio de IA generativa. Designer & Web Designer em Goiânia.",
