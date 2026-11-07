@@ -2,7 +2,7 @@
 
 - **Cliente:** Gabriel Soares (marca pessoal)
 - **Data:** 2026-11-06
-- **Status:** pronto e testado localmente (build ok, desktop + celular, PT/EN); falta publicar na Vercel (login do Gabriel)
+- **Status:** publicado em 2026-11-07 → https://gabrielsoares-design.vercel.app (Vercel pessoal `gabrieloliveira159951-5307`, projeto `gabrielsoares-design`, plano Hobby)
 - **Solicitante:** Gabriel
 
 ## 1. Objetivo
