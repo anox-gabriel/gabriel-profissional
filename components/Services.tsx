@@ -4,6 +4,7 @@ import { useState } from "react";
 import { useLang } from "@/lib/i18n";
 import { Diamond, SectionHead, Sparkle } from "./ornaments";
 import Reveal from "./Reveal";
+import { track } from "@/lib/track";
 
 function Pip({ i }: { i: number }) {
   if (i === 4) return <Sparkle className="h-5 w-5 text-teal" />;
@@ -28,7 +29,10 @@ export default function Services() {
                 type="button"
                 className="flip block aspect-[5/7] w-full text-left"
                 data-flipped={flipped === i}
-                onClick={() => setFlipped((f) => (f === i ? null : i))}
+                onClick={() => {
+                  if (flipped !== i) track("virou_carta", { servico: s.title.pt });
+                  setFlipped((f) => (f === i ? null : i));
+                }}
                 aria-label={s.title[lang]}
               >
                 <div className="flip-inner h-full w-full">

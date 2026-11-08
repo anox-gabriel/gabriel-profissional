@@ -9,6 +9,8 @@ import Services from "@/components/Services";
 import AIProcess from "@/components/AIProcess";
 import About from "@/components/About";
 import Contact, { Footer } from "@/components/Contact";
+import CookieBanner from "@/components/CookieBanner";
+import LinkTracker from "@/components/LinkTracker";
 
 export default function Home() {
   return (
@@ -26,6 +28,8 @@ export default function Home() {
         <Contact />
       </main>
       <Footer />
+      <CookieBanner />
+      <LinkTracker />
     </LangProvider>
   );
 }

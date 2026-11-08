@@ -7,6 +7,7 @@ import { sites } from "@/lib/data";
 import { SectionHead } from "./ornaments";
 import Reveal from "./Reveal";
 import Lightbox, { type LbItem } from "./Lightbox";
+import { track } from "@/lib/track";
 
 const INITIAL = 6;
 
@@ -48,7 +49,10 @@ export default function Sites() {
                 viewport={{ once: true, margin: "-40px" }}
                 transition={{ duration: 0.7, delay: (i % 3) * 0.08, ease: [0.2, 0.7, 0.2, 1] }}
               >
-                <button type="button" onClick={() => setLb(i)} className="group block w-full text-left" aria-label={`${d.sites.view[lang]}: ${s.name}`}>
+                <button type="button" onClick={() => {
+                    setLb(i);
+                    track("abriu_site", { projeto: s.name });
+                  }} className="group block w-full text-left" aria-label={`${d.sites.view[lang]}: ${s.name}`}>
                   <div className="relative overflow-hidden rounded-xl border border-cream/15 bg-ink-2 shadow-[0_30px_60px_-30px_rgba(0,0,0,.9)] transition-all duration-500 group-hover:-translate-y-1.5 group-hover:border-teal/60 group-hover:shadow-[0_40px_80px_-30px_rgba(38,166,154,.35)]">
                     <div className="flex items-center gap-1.5 border-b border-cream/10 px-3.5 py-2.5">
                       <span className="h-2 w-2 rounded-full bg-ruby/90" />

@@ -5,6 +5,7 @@ import { AnimatePresence, motion } from "motion/react";
 import { useLang } from "@/lib/i18n";
 import { waLink } from "@/lib/data";
 import { Diamond } from "./ornaments";
+import { track } from "@/lib/track";
 
 export function LangToggle({ className = "" }: { className?: string }) {
   const { lang, setLang } = useLang();
@@ -17,7 +18,10 @@ export function LangToggle({ className = "" }: { className?: string }) {
       {(["pt", "en"] as const).map((l) => (
         <button
           key={l}
-          onClick={() => setLang(l)}
+          onClick={() => {
+            if (l !== lang) track("trocou_idioma", { idioma: l });
+            setLang(l);
+          }}
           aria-pressed={lang === l}
           className={`relative z-10 rounded-full px-3 py-1.5 uppercase transition-colors ${
             lang === l ? "text-ink" : "text-cream/60 hover:text-cream"

@@ -7,6 +7,7 @@ import { creatives, type Group } from "@/lib/data";
 import { SectionHead, Sparkle } from "./ornaments";
 import Reveal from "./Reveal";
 import Lightbox, { type LbItem } from "./Lightbox";
+import { track } from "@/lib/track";
 
 const groups: Group[] = ["all", "food", "health", "brands", "realestate", "events"];
 const STEP = 12;
@@ -73,6 +74,7 @@ export default function Creatives() {
                 onClick={() => {
                   setGroup(g);
                   setLimit(STEP);
+                  track("filtro_criativos", { filtro: g });
                 }}
                 className={`relative rounded-full border px-5 py-2.5 text-[11px] font-semibold uppercase tracking-[0.2em] transition ${
                   group === g ? "border-cream text-ink" : "border-cream/20 text-cream/65 hover:border-cream/50 hover:text-cream"
@@ -94,7 +96,10 @@ export default function Creatives() {
             <motion.button
               key={`${group}-${c.id}`}
               type="button"
-              onClick={() => setLb(i)}
+              onClick={() => {
+                setLb(i);
+                track("abriu_criativo", { cliente: c.client, peca: c.id });
+              }}
               initial={{ opacity: 0, y: 24 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-30px" }}
