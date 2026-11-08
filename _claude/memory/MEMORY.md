@@ -1,0 +1,10 @@
+- [Estrutura workspace V4](v4-workspace-estrutura.md) — designer V4, pastas por cliente, fluxo com specs
+- [Idioma](idioma-portugues.md) — sempre responder em português (pt-BR)
+- [Formato de criativo](formato-criativo-padrao.md) — criativo/Instagram = 1080x1350 px salvo outra dimensão no pedido
+- Repo GitHub do workspace: https://github.com/gabrieloliveira-v4/claude-workspaces (raiz `c:\[VS] Claude\Workspaces`, branch main; usar `git -C` com caminho literal por causa dos colchetes). Em "commita tudo": rodar antes `_scripts\sync-chats.ps1` (copia chats+memória para `_claude/` removendo chaves de API), conferir que não sobrou chave, depois commit+push
+- [In Natura GitHub LPs](innatura-github-lps.md) — LPs da In Natura vão no repo gabrieloliveira-v4/innatura
+- [Custo Magnific](magnific-custo-padrao.md) — ~60 créditos por imagem, qualidade medium, no máximo 2k, todos os clientes
+- [Drive sincronizado em G:](drive-sincronizado-g.md) — ler/copiar/entregar arquivos do Drive pelo G:, não pelo conector
+- [Edição de Reels local](edicao-reels-local.md) — vídeo do cliente editado com ffmpeg+Whisper, sem IA; scripts no Dr. Messias
+- [Japão panfleto online](japao-panfleto-online.md) — v0/Next no repo anox-gabriel/panfleto-japao → panfleto-japao.vercel.app
+- [Gabriel Profissional](gabriel-profissional-workspace.md) — workspace pessoal (LinkedIn/portfólio) + Grid Oculto; foco Designer & Web Designer, IA como diferencial; site em gabrielsoares-design.vercel.app
