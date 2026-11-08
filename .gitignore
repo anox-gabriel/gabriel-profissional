@@ -1,0 +1,13 @@
+# Sistema
+Thumbs.db
+desktop.ini
+.DS_Store
+.vscode/
+.claude/settings.local.json
+.env
+.env.*
+*.tmp
+~$*
+
+# repo separado (site portfólio)
+site-portfolio/
