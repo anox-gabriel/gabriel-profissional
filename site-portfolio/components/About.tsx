@@ -8,8 +8,8 @@ import PlayingCard from "./PlayingCard";
 export default function About() {
   const { lang, d } = useLang();
   return (
-    <section id="sobre" className="relative z-10 scroll-mt-20 py-28 md:py-36">
-      <div className="mx-auto grid max-w-7xl gap-16 px-5 md:px-8 lg:grid-cols-[1.1fr_1fr] lg:gap-24">
+    <section id="sobre" className="relative z-10 scroll-mt-20 py-16 sm:py-24 md:py-36">
+      <div className="mx-auto grid max-w-7xl gap-12 px-5 md:px-8 lg:grid-cols-[1.1fr_1fr] lg:gap-24">
         <div>
           <Reveal>
             <SectionHead index="05" eyebrow={d.about.eyebrow[lang]} title={d.about.title[lang]} />

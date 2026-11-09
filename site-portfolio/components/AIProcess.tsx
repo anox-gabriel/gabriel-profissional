@@ -15,7 +15,7 @@ const tools = ["Claude", "Magnific", "v0", "Figma", "Photoshop", "WordPress / El
 export default function AIProcess() {
   const { lang, d } = useLang();
   return (
-    <section id="ia" className="relative z-10 scroll-mt-20 overflow-hidden border-y border-cream/10 bg-ink-2/70 py-28 md:py-36">
+    <section id="ia" className="relative z-10 scroll-mt-20 overflow-hidden border-y border-cream/10 bg-ink-2/70 py-16 sm:py-24 md:py-36">
       <div className="pointer-events-none absolute left-1/2 top-0 h-[500px] w-[900px] -translate-x-1/2 rounded-full bg-teal/[0.07] blur-[120px]" />
       <div className="relative mx-auto max-w-7xl px-5 md:px-8">
         <Reveal>
@@ -23,7 +23,7 @@ export default function AIProcess() {
         </Reveal>
 
         <Reveal delay={0.05}>
-          <p className="mt-14 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.3em] text-cream/45">
+          <p className="mt-10 md:mt-14 flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.3em] text-cream/45">
             <Sparkle className="h-3 w-3 text-teal" />
             {d.ai.case[lang]}
           </p>
@@ -60,7 +60,7 @@ export default function AIProcess() {
         </div>
 
         <Reveal delay={0.1}>
-          <div className="mt-16 flex flex-col gap-8 rounded-2xl border border-cream/10 bg-ink/60 p-7 md:flex-row md:items-center md:justify-between md:p-9">
+          <div className="mt-10 md:mt-16 flex flex-col gap-8 rounded-2xl border border-cream/10 bg-ink/60 p-7 md:flex-row md:items-center md:justify-between md:p-9">
             <p className="flex items-center gap-3 text-base text-cream/80 md:text-lg">
               <Sparkle className="h-5 w-5 shrink-0 text-teal" />
               {d.ai.video[lang]}

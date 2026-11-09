@@ -58,7 +58,7 @@ export default function Creatives() {
   const close = useCallback(() => setLb(null), []);
 
   return (
-    <section id="criativos" className="relative z-10 scroll-mt-20 py-28 md:py-36">
+    <section id="criativos" className="relative z-10 scroll-mt-20 py-16 sm:py-24 md:py-36">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <Reveal>
           <SectionHead index="02" eyebrow={d.creatives.eyebrow[lang]} title={d.creatives.title[lang]} sub={d.creatives.sub[lang]} />
@@ -136,7 +136,7 @@ export default function Creatives() {
         </div>
 
         {limit < list.length && (
-          <div className="mt-12 flex justify-center">
+          <div className="mt-8 flex justify-center md:mt-12">
             <button
               type="button"
               onClick={() => setLimit((l) => l + STEP)}

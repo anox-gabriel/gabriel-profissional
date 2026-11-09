@@ -32,13 +32,13 @@ export default function Sites() {
   const close = useCallback(() => setLb(null), []);
 
   return (
-    <section id="sites" className="relative z-10 scroll-mt-20 py-28 md:py-36">
+    <section id="sites" className="relative z-10 scroll-mt-20 py-16 sm:py-24 md:py-36">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <Reveal>
           <SectionHead index="01" eyebrow={d.sites.eyebrow[lang]} title={d.sites.title[lang]} sub={d.sites.sub[lang]} />
         </Reveal>
 
-        <div className="mt-16 grid grid-cols-1 gap-x-8 gap-y-14 md:grid-cols-2 xl:grid-cols-3">
+        <div className="mt-10 md:mt-16 grid grid-cols-1 gap-x-8 gap-y-10 md:gap-y-14 md:grid-cols-2 xl:grid-cols-3">
           <AnimatePresence initial={false}>
             {shown.map((s, i) => (
               <motion.div
@@ -91,7 +91,7 @@ export default function Sites() {
           </AnimatePresence>
         </div>
 
-        <div className="mt-16 flex justify-center">
+        <div className="mt-10 md:mt-16 flex justify-center">
           <button
             type="button"
             onClick={() => {

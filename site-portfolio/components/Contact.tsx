@@ -20,7 +20,7 @@ export default function Contact() {
   };
 
   return (
-    <section id="contato" className="relative z-10 scroll-mt-20 overflow-hidden py-28 md:py-40">
+    <section id="contato" className="relative z-10 scroll-mt-20 overflow-hidden py-20 sm:py-28 md:py-40">
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[560px] w-[560px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-cream/[0.06]" />
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[720px] w-[720px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-dashed border-teal/15" />
       <div className="pointer-events-none absolute left-1/2 top-1/2 h-[420px] w-[420px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-teal/10 blur-[120px]" />

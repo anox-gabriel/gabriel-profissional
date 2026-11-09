@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "motion/react";
 import { useLang } from "@/lib/i18n";
 
@@ -24,12 +25,36 @@ export default function Lightbox({
   const open = index !== null;
   const item = open ? items[index] : null;
 
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => {
+    // eslint-disable-next-line react-hooks/set-state-in-effect
+    setMounted(true);
+  }, []);
+
+  // Botão "voltar" do celular fecha o visualizador
+  const onCloseRef = useRef(onClose);
+  useEffect(() => {
+    onCloseRef.current = onClose;
+  }, [onClose]);
+  useEffect(() => {
+    if (!open) return;
+    window.history.pushState({ lightbox: true }, "");
+    const onPop = () => onCloseRef.current();
+    window.addEventListener("popstate", onPop);
+    return () => window.removeEventListener("popstate", onPop);
+  }, [open]);
+
+  const requestClose = useCallback(() => {
+    if (window.history.state?.lightbox) window.history.back();
+    else onClose();
+  }, [onClose]);
+
   useEffect(() => {
     if (!open) return;
     const prev = document.body.style.overflow;
     document.body.style.overflow = "hidden";
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === "Escape") onClose();
+      if (e.key === "Escape") requestClose();
       if (e.key === "ArrowRight") onIndex((index! + 1) % items.length);
       if (e.key === "ArrowLeft") onIndex((index! - 1 + items.length) % items.length);
     };
@@ -38,13 +63,16 @@ export default function Lightbox({
       document.body.style.overflow = prev;
       window.removeEventListener("keydown", onKey);
     };
-  }, [open, index, items.length, onClose, onIndex]);
+  }, [open, index, items.length, requestClose, onIndex]);
 
   useEffect(() => {
     scroller.current?.scrollTo({ top: 0 });
   }, [index]);
 
-  return (
+  if (!mounted) return null;
+
+  // Portal no <body>: fica acima do menu fixo (antes ficava preso no z-index da seção)
+  return createPortal(
     <AnimatePresence>
       {item && (
         <motion.div
@@ -71,13 +99,13 @@ export default function Lightbox({
               <NavBtn label={d.lightbox.next[lang]} onClick={() => onIndex((index! + 1) % items.length)}>
                 →
               </NavBtn>
-              <NavBtn label={d.lightbox.close[lang]} onClick={onClose}>
+              <NavBtn label={d.lightbox.close[lang]} onClick={requestClose}>
                 ✕
               </NavBtn>
             </div>
           </div>
 
-          <div ref={scroller} className="flex-1 overflow-y-auto overscroll-contain" onClick={onClose}>
+          <div ref={scroller} className="flex-1 overflow-y-auto overscroll-contain" onClick={requestClose}>
             <motion.div
               key={item.src}
               initial={{ opacity: 0, y: 20 }}
@@ -114,7 +142,8 @@ export default function Lightbox({
           </div>
         </motion.div>
       )}
-    </AnimatePresence>
+    </AnimatePresence>,
+    document.body
   );
 }
 

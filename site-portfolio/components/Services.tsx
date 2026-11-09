@@ -16,13 +16,13 @@ export default function Services() {
   const [flipped, setFlipped] = useState<number | null>(null);
 
   return (
-    <section id="servicos" className="relative z-10 py-28 md:py-36">
+    <section id="servicos" className="relative z-10 py-16 sm:py-24 md:py-36">
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <Reveal>
           <SectionHead index="03" eyebrow={d.services.eyebrow[lang]} title={d.services.title[lang]} sub={d.services.sub[lang]} />
         </Reveal>
 
-        <div className="mt-16 grid grid-cols-2 gap-3 sm:gap-6 md:grid-cols-3 lg:grid-cols-5 lg:gap-5">
+        <div className="mt-10 md:mt-16 grid grid-cols-2 gap-3 sm:gap-6 md:grid-cols-3 lg:grid-cols-5 lg:gap-5">
           {d.services.items.map((s, i) => (
             <Reveal key={i} delay={i * 0.08}>
               <button
