@@ -1,0 +1,43 @@
+# Empreendi Contabilidade — configuração do Apache (HostGator)
+
+# 1) Forçar HTTPS e domínio sem "www"
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteCond %{HTTPS} off [OR]
+  RewriteCond %{HTTP_HOST} ^www\. [NC]
+  RewriteRule ^ https://empreendicontabil.com.br%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# 2) Página inicial
+DirectoryIndex index.html
+
+# 3) Compressão (site mais rápido)
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css application/javascript text/javascript image/svg+xml application/json
+</IfModule>
+
+# 4) Cache do navegador
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType text/javascript "access plus 1 month"
+  ExpiresByType image/webp "access plus 6 months"
+  ExpiresByType image/png "access plus 6 months"
+  ExpiresByType image/svg+xml "access plus 6 months"
+</IfModule>
+
+# 5) Segurança básica
+Options -Indexes
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+  Header set X-Frame-Options "SAMEORIGIN"
+</IfModule>
+
+# 6) Links antigos do WordPress que ainda estejam no Google voltam para a home
+<IfModule mod_rewrite.c>
+  RewriteRule ^(wp-admin|wp-content|wp-login\.php|sobre|servicos|contato)(/.*)?$ / [L,R=301]
+</IfModule>
+ErrorDocument 404 /index.html

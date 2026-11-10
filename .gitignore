@@ -9,3 +9,6 @@ desktop.ini
 *.tmp
 ~$*
 
+
+# Pacotes gerados para upload (ex.: site .zip)
+*.zip

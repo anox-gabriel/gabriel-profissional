@@ -7,4 +7,5 @@
 - [Drive sincronizado em G:](drive-sincronizado-g.md) — ler/copiar/entregar arquivos do Drive pelo G:, não pelo conector
 - [Edição de Reels local](edicao-reels-local.md) — vídeo do cliente editado com ffmpeg+Whisper, sem IA; scripts no Dr. Messias
 - [Japão panfleto online](japao-panfleto-online.md) — v0/Next no repo anox-gabriel/panfleto-japao → panfleto-japao.vercel.app
+- [Empreendi Contabilidade](empreendi-contabilidade.md) — cliente freela do Gabriel; site HTML estático na HostGator, pendências
 - [Gabriel Profissional](gabriel-profissional-workspace.md) — workspace pessoal (LinkedIn/portfólio) + Grid Oculto; foco Designer & Web Designer, IA como diferencial; site em gabrielsoares-design.vercel.app

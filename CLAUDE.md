@@ -31,7 +31,7 @@ Gabriel - Profissional/
         └── assets/        ← artes finais, uma pasta por campanha (AAAA-MM-nome-da-campanha/)
 ```
 
-Clientes atuais: **Grid Oculto** (minha marca/empresa). Trabalhos feitos para a V4 Company não ficam aqui; entram no máximo como peça de portfólio.
+Clientes atuais: **Grid Oculto** (minha marca/empresa) e **Empreendi Contabilidade** (freela: site em HTML estático na HostGator). Trabalhos feitos para a V4 Company não ficam aqui; entram no máximo como peça de portfólio.
 
 ## Cliente novo (sempre seguir)
 
