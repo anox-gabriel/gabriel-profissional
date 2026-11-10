@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Resume — Gabriel Soares</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#0A0A0A; --cream:#E5DAC8; --cream-soft:#F6F1E8; --teal:#26A69A; --teal-dark:#1C7F76; --red:#B71C1C;
+    --muted:#55524C; --line:#DDD3C3;
+  }
+  @page{ size:A4; margin:0; }
+  *{ box-sizing:border-box; margin:0; padding:0; }
+  html,body{ background:#fff; }
+  body{ font-family:'Montserrat',sans-serif; color:var(--ink); font-size:9.1pt; line-height:1.45;
+        -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+  a{ color:inherit; text-decoration:none; }
+  .page{ width:210mm; height:297mm; display:grid; grid-template-columns:64mm 1fr; overflow:hidden; }
+
+  /* Lateral */
+  aside{ background:var(--ink); color:var(--cream); padding:15mm 7mm 10mm 9mm; position:relative; }
+  aside::before{ content:""; position:absolute; inset:0; opacity:.07;
+    background-image:linear-gradient(var(--cream) 1px,transparent 1px),linear-gradient(90deg,var(--cream) 1px,transparent 1px);
+    background-size:8mm 8mm; pointer-events:none; }
+  aside > *{ position:relative; }
+  .diamond{ display:inline-block; width:7px; height:7px; background:var(--red); transform:rotate(45deg); margin-right:7px; vertical-align:1px; }
+  aside h2{ font-size:7.6pt; letter-spacing:.22em; text-transform:uppercase; color:var(--teal); font-weight:700;
+            margin:5.2mm 0 2.4mm; padding-bottom:1.6mm; border-bottom:1px solid rgba(229,218,200,.18); }
+  aside h2:first-of-type{ margin-top:0; }
+  .contact li{ list-style:none; margin-bottom:1.9mm; font-size:8.1pt; line-height:1.35; }
+  .contact span{ display:block; font-size:6.6pt; letter-spacing:.18em; text-transform:uppercase; color:rgba(229,218,200,.55); margin-bottom:.4mm; }
+  .tags{ display:flex; flex-wrap:wrap; gap:1.3mm; }
+  .tags li{ list-style:none; font-size:7.3pt; border:1px solid rgba(229,218,200,.28); border-radius:20px; padding:.5mm 2.1mm; }
+  .tags.ai li{ border-color:rgba(38,166,154,.7); color:#CFEDEA; }
+  .side-list li{ list-style:none; margin-bottom:1.6mm; font-size:8pt; line-height:1.35; }
+  .side-list small{ display:block; color:rgba(229,218,200,.6); font-size:7.1pt; }
+
+  /* Principal */
+  main{ padding:15mm 13mm 12mm 11mm; }
+  header h1{ font-family:'Cinzel',serif; font-weight:600; font-size:27pt; letter-spacing:.04em; line-height:1; }
+  header .role{ margin-top:2.4mm; font-size:9pt; font-weight:600; letter-spacing:.24em; text-transform:uppercase; color:var(--teal-dark); }
+  header .sub{ margin-top:1.4mm; font-size:8.2pt; color:var(--muted); letter-spacing:.04em; }
+  main h2{ font-family:'Cinzel',serif; font-size:11pt; font-weight:700; letter-spacing:.08em; margin:6mm 0 2.6mm;
+           display:flex; align-items:center; gap:3mm; }
+  main h2::after{ content:""; flex:1; height:1px; background:var(--line); }
+  .summary{ color:#2A2826; }
+  .job{ margin-bottom:3.6mm; break-inside:avoid; }
+  .job-head{ display:flex; justify-content:space-between; align-items:baseline; gap:4mm; }
+  .job h3{ font-size:9.6pt; font-weight:700; }
+  .job .when{ font-size:7.8pt; color:var(--muted); white-space:nowrap; font-weight:500; }
+  .job .where{ font-size:8.2pt; color:var(--teal-dark); font-weight:600; margin-top:.3mm; }
+  .job ul{ margin:1.3mm 0 0 3.6mm; }
+  .job li{ margin-bottom:.8mm; color:#2A2826; }
+  .job li::marker{ color:var(--teal); }
+  .job li b{ font-weight:600; color:var(--ink); }
+  .projects{ display:grid; grid-template-columns:1fr 1fr; gap:3mm; }
+  .projects div{ background:var(--cream-soft); border-left:2px solid var(--teal); padding:2.4mm 3mm; font-size:8.1pt; color:#2A2826; }
+  .projects b{ display:block; font-size:7.2pt; letter-spacing:.16em; text-transform:uppercase; color:var(--ink); margin-bottom:1mm; }
+</style>
+</head>
+<body>
+<div class="page">
+  <aside>
+    <h2>Contact</h2>
+    <ul class="contact">
+      <li><span>Location</span>Goiânia, Brazil · open to remote</li>
+      <li><span>WhatsApp</span><a href="https://wa.me/5562993247585">+55 62 99324-7585</a></li>
+      <li><span>Email</span><a href="mailto:gabrieloliveira159951@gmail.com">gabrieloliveira159951<br>@gmail.com</a></li>
+      <li><span>LinkedIn</span><a href="https://www.linkedin.com/in/gabriel-soares-02a033279/">linkedin.com/in/<br>gabriel-soares-02a033279</a></li>
+      <li><span>Instagram</span><a href="https://www.instagram.com/sgabriel_designer/">@sgabriel_designer</a></li>
+      <li><span>Portfolio</span><a href="https://gabrielsoares-design.vercel.app">gabrielsoares-design<br>.vercel.app ↗</a></li>
+    </ul>
+
+    <h2>Skills</h2>
+    <ul class="tags">
+      <li>Web design</li><li>Landing pages (CRO)</li><li>UI/UX</li><li>Graphic design</li>
+      <li>Social media</li><li>Visual identity</li><li>Ad creatives</li>
+      <li>Presentations</li><li>Responsive design</li><li>Video editing</li>
+    </ul>
+
+    <h2>Tools</h2>
+    <ul class="tags">
+      <li>Figma</li><li>Photoshop</li><li>WordPress</li><li>Elementor</li><li>HTML &amp; CSS</li>
+    </ul>
+
+    <h2>Generative AI</h2>
+    <ul class="tags ai">
+      <li>Claude</li><li>Magnific</li><li>v0 / Vercel</li><li>Prompt engineering</li>
+      <li>AI imagery</li><li>AI video</li>
+    </ul>
+
+    <h2>Education</h2>
+    <ul class="side-list">
+      <li>Associate Degree in Graphic Design<small>Faculdade Senac Goiás · Brazil</small></li>
+    </ul>
+
+    <h2>Courses</h2>
+    <ul class="side-list">
+      <li>Photoshop for Matte Painting<small>Domestika · 2022 · certified</small></li>
+      <li>HTML &amp; CSS<small>Onebitcode</small></li>
+      <li>Elementor<small>Rocket Cursos</small></li>
+      <li>Projeto Copiloto<small>Lucas Rosa</small></li>
+    </ul>
+  </aside>
+
+  <main>
+    <header>
+      <h1>Gabriel Soares</h1>
+      <div class="role"><span class="diamond"></span>Designer &amp; Web Designer</div>
+      <div class="sub">Websites · Landing Pages · Social Media · AI-powered creative workflow</div>
+    </header>
+
+    <h2>Profile</h2>
+    <p class="summary">Designer and web designer since 2021. I create websites, landing pages and visual content that help businesses stand out online, from Figma layout to WordPress launch, with a focus on responsive design, user experience and conversion. Currently a Mid-level Designer at V4 Company, a Brazilian growth marketing agency, working with companies that invest in paid media. I use generative AI daily to create and retouch images and move faster without compromising on finish.</p>
+
+    <h2>Experience</h2>
+
+    <div class="job">
+      <div class="job-head"><h3>Mid-level Designer</h3><span class="when">Jan 2026 – Present</span></div>
+      <div class="where">V4 Company · Goiânia, on-site</div>
+      <ul>
+        <li>Websites and landing pages focused on UI/UX and conversion (CRO), built in WordPress and page builders.</li>
+        <li>Social media, ad creatives and visual identity aligned with paid media campaigns, working with the Growth team.</li>
+        <li>Supporting around 20 accounts across healthcare, retail, food &amp; beverage, construction and services.</li>
+        <li><b>AI in production:</b> creating and retouching images, short videos and pages with Claude, Magnific and v0, including Black November campaigns and an online offers flyer.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head"><h3>Designer &amp; Web Designer</h3><span class="when">Nov 2025 – Apr 2026</span></div>
+      <div class="where">Mestres do Seguro · freelance, hybrid</div>
+      <ul>
+        <li>Premium sales decks, lead-generation landing pages and social media to scale the brand.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head"><h3>Web Designer &amp; Graphic Designer</h3><span class="when">Feb 2025 – Jan 2026</span></div>
+      <div class="where">Lumina Studio Digital · contractor</div>
+      <ul>
+        <li>Corporate websites, landing pages and social media artwork for the studio's clients.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head"><h3>UX/UI Interface Designer</h3><span class="when">Jul 2021 – Jan 2026</span></div>
+      <div class="where">Freelance · remote</div>
+      <ul>
+        <li>Websites, landing pages and visual identity projects for direct clients, from layout to launch.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-head"><h3>Web Designer</h3><span class="when">Jun 2021 – Mar 2023</span></div>
+      <div class="where">Heyon Digital · full-time</div>
+      <ul>
+        <li>Web design and graphic design for the agency's clients.</li>
+      </ul>
+    </div>
+
+    <h2>Selected Projects</h2>
+    <div class="projects">
+      <div><b>Websites &amp; landing pages</b>Paxman, Port Engenharia, Cipasa, Luzia Helena Advocacia, HDerma, Rogos Telecom, Empreendi Contabilidade, AlicoRemit</div>
+      <div><b>Creatives &amp; social media</b>Malu Vinhos, Dr. Messias Pacheco, Japão da Construção, Kados, Madu, OrcaPP, Veico, Reserva do Parque</div>
+    </div>
+  </main>
+</div>
+</body>
+</html>

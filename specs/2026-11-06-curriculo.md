@@ -28,3 +28,12 @@ Currículo de 1 página em PDF para candidaturas, com a mesma trajetória e o me
 - [ ] Idiomas (se houver)
 - [ ] Certificados Growth V4 quando baixados
 - [ ] Trocar o link do Drive pelo site-portfólio quando for publicado na Vercel
+
+## 6. Versão em inglês (2026-11-10)
+- Arquivos: `resume-gabriel-soares-en.pdf` e `resume-gabriel-soares-en.html` (A4, 1 página, mesmo layout).
+- Diferenças em relação à versão PT:
+  - Telefone no formato internacional (+55); local "Goiânia, Brazil · open to remote".
+  - V4 descrita como "a Brazilian growth marketing agency".
+  - Portfólio aponta para o site `gabrielsoares-design.vercel.app`.
+- Formação: "Associate Degree in Graphic Design" (equivalente usual de tecnólogo).
+- Sem seção de idiomas: falta o nível de inglês do Gabriel.
